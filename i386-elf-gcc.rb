@@ -25,7 +25,10 @@ class I386ElfGcc < Formula
       system '../configure', '--disable-nls', '--target=i386-elf', '--disable-werror',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
-                             "--without-headers"
+                             "--without-headers",
+                             "--with-gmp=#{Formula["gmp"].opt_prefix}",
+                             "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
+                             "--with-mpc=#{Formula["libmpc"].opt_prefix}"
       system 'make all-gcc'
       system 'make install-gcc'
       FileUtils.ln_sf binutils.prefix/"i386-elf", prefix/"i386-elf"
