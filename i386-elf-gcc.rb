@@ -4,7 +4,7 @@ class I386ElfGcc < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftpmirror.gnu.org/gcc/gcc-4.9.3/gcc-4.9.3.tar.bz2'
   mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.9.3/gcc-4.9.3.tar.bz2'
-  sha1 '2e6490a908eac8b2b56b73679bd7c2a5237df1f8'
+  sha256 '1934f3f68fe477299fe929e527c62d800f8b1b01ca74cc218f90459715ace296'
   revision 1
 
   depends_on 'gmp'
