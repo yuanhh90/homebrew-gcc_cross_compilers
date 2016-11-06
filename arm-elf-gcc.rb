@@ -2,9 +2,9 @@ require 'formula'
 
 class ArmElfGcc < Formula
   homepage 'http://gcc.gnu.org'
-  url 'http://ftpmirror.gnu.org/gcc/gcc-4.8.0/gcc-4.8.0.tar.bz2'
-  mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.8.0/gcc-4.8.0.tar.bz2'
-  sha256 'be10769d38c83d09387e55ae8b3f036973e420a76a234f381ba7684b7cd3a22e'
+  url 'http://ftpmirror.gnu.org/gcc/gcc-4.9.3/gcc-4.9.3.tar.bz2'
+  mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.9.3/gcc-4.9.3.tar.bz2'
+  sha256 '2332b2a5a321b57508b9031354a8503af6fdfb868b8c1748d33028d100a8b67e'
 
   depends_on 'gmp'
   depends_on 'libmpc'
@@ -12,12 +12,12 @@ class ArmElfGcc < Formula
   depends_on 'arm-elf-binutils'
 
   def install
-    binutils = Formula.factory 'arm-elf-binutils'
+    binutils = Formulary.factory 'arm-elf-binutils'
 
-    ENV['CC'] = '/usr/local/bin/gcc-4.2'
-    ENV['CXX'] = '/usr/local/bin/g++-4.2'
-    ENV['CPP'] = '/usr/local/bin/cpp-4.2'
-    ENV['LD'] = '/usr/local/bin/gcc-4.2'
+    ENV['CC'] = '/usr/local/bin/gcc-4.9'
+    ENV['CXX'] = '/usr/local/bin/g++-4.9'
+    ENV['CPP'] = '/usr/local/bin/cpp-4.9'
+    ENV['LD'] = '/usr/local/bin/gcc-4.9'
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 
     mkdir 'build' do
