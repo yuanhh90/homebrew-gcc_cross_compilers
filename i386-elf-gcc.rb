@@ -2,9 +2,9 @@ require 'formula'
 
 class I386ElfGcc < Formula
   homepage 'http://gcc.gnu.org'
-  url 'http://ftpmirror.gnu.org/gcc/gcc-4.9.2/gcc-4.9.2.tar.bz2'
-  mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.9.2/gcc-4.9.2.tar.bz2'
-  sha1 '79dbcb09f44232822460d80b033c962c0237c6d8'
+  url 'http://ftpmirror.gnu.org/gcc/gcc-4.9.3/gcc-4.9.3.tar.bz2'
+  mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.9.3/gcc-4.9.3.tar.bz2'
+  sha256 '1934f3f68fe477299fe929e527c62d800f8b1b01ca74cc218f90459715ace296'
   revision 1
 
   depends_on 'gmp'
@@ -25,7 +25,10 @@ class I386ElfGcc < Formula
       system '../configure', '--disable-nls', '--target=i386-elf', '--disable-werror',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
-                             "--without-headers"
+                             "--without-headers",
+                             "--with-gmp=#{Formula["gmp"].opt_prefix}",
+                             "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
+                             "--with-mpc=#{Formula["libmpc"].opt_prefix}"
       system 'make all-gcc'
       system 'make install-gcc'
       FileUtils.ln_sf binutils.prefix/"i386-elf", prefix/"i386-elf"
