@@ -3,7 +3,7 @@ require 'formula'
 class I386ElfBinutils < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftp.gnu.org/gnu/binutils/binutils-2.25.tar.gz'
-  sha256 '7909a08eabdbaac0f7a22e9ede82a66ba70acd50629b045e705af864eef10b65'
+  sha256 'cccf377168b41a52a76f46df18feb8f7285654b3c1bd69fc8265cb0fc6902f2d'
 
   depends_on 'gcc49' => :build
 
